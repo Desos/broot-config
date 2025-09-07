@@ -21,10 +21,10 @@
 # default, for example `default_flags="-ihp"` if you usually want
 # to see hidden and gitignored files and the permissions (then
 # if you don't want the hidden files at a specific launch,
-# you can launch broot with `br -H`).
+# you can launch broot with `br -H`).
 # A popular flag is the `g` one which displays git related info.
 #
-# default_flags:
+default_flags: gh
 
 ###############################################################
 # Terminal's title
@@ -32,10 +32,10 @@
 # directory, set a terminal_title pattern by uncommenting one of
 # the examples below and tuning it to your taste.
 #
-# terminal_title: "[broot] {git-name}"
+terminal_title: "[broot] {git-name}"
 # terminal_title: "{file} 🐄"
 # terminal_title: "-= {file-name} =-"
-# reset_terminal_title_on_exit: false
+reset_terminal_title_on_exit: true
 
 ###############################################################
 # Date/Time format
@@ -77,7 +77,13 @@ show_selection_mark: true
 #     branch
 #     name
 # ]
-
+cols_order: [
+    mark
+    git
+    branch
+    count
+    name
+]
 ###############################################################
 # True Colors
 # If this parameter isn't set, broot tries to automatically
@@ -86,7 +92,7 @@ show_selection_mark: true
 # and set it to false or true if you notice the colors in
 # previewed images are too off.
 #
-# true_colors: false
+true_colors: true
 
 ###############################################################
 # Icons
@@ -94,7 +100,7 @@ show_selection_mark: true
 # (see https://dystroy.org/broot/icons for installation and
 # troubleshooting)
 #
-# icon_theme: vscode
+icon_theme: nerdfont
 
 ###############################################################
 # Special paths
@@ -131,7 +137,7 @@ special_paths: {
 # to cancel (for example when you just opened broot), uncomment
 # this parameter
 # 
-# quit_on_last_cancel: true
+quit_on_last_cancel: true
 
 ###############################################################
 # Search modes
@@ -156,10 +162,10 @@ special_paths: {
 # More information on
 #  https://dystroy.org/broot/input/#the-filtering-pattern
 #
-# search_modes: {
-#     <empty>: fuzzy name
-#     /: regex name
-# }
+search_modes: {
+    <empty>: fuzzy name
+    /: regex name
+}
 
 ###############################################################
 # File Extension Colors
@@ -194,7 +200,7 @@ content_search_max_file_size: 10MB
 # current's panel root. If you want to keep it unchanged,
 # uncomment this setting
 #
-# update_work_dir: false
+update_work_dir: true
 
 ###############################################################
 # Kitty Keyboard extension
@@ -205,7 +211,7 @@ content_search_max_file_size: 10MB
 # This makes it possible to use shortcuts like 'space-n', 
 # 'ctrl-alt-a-b', 'shift-space', etc.
 #
-enable_kitty_keyboard: false
+enable_kitty_keyboard: true
 
 ###############################################################
 # lines around matching line in filtered preview
@@ -227,12 +233,12 @@ lines_after_match_in_preview: 1
 preview_transformers: [
     // # Use mutool to render any PDF file as an image
     // # In this example we use placeholders for the input and output files
-    // {
-    //     input_extensions: [ "pdf" ] // case doesn't matter
-    //     output_extension: png
-    //     mode: image
-    //     command: [ "mutool", "draw", "-w", "1000", "-o", "{output-path}", "{input-path}" ]
-    // }
+    {
+        input_extensions: [ "pdf" ] // case doesn't matter
+        output_extension: png
+        mode: image
+        command: [ "mutool", "draw", "-w", "1000", "-o", "{output-path}", "{input-path}" ]
+    }
 
     // # Use LibreOffice to render Office files as images
     // # In this example, {output-dir} is used to specify where LibreOffice must write the result
@@ -251,12 +257,12 @@ preview_transformers: [
     // # Use jq to beautify JSON
     // # In this example, the command refers to neither the input nor the output,
     // # so broot pipes them to the stdin and stdout of the jq process
-    // {
-    //     input_extensions: [ "json" ] 
-    //     output_extension: json
-    //     mode: text
-    //     command: [ "jq" ]
-    // }
+    {
+        input_extensions: [ "json" ] 
+        output_extension: json
+        mode: text
+        command: [ "jq" ]
+    }
 ]
 
 ###############################################################
@@ -282,9 +288,9 @@ imports: [
             unknown
         ]
         # (un)comment to choose your preferred skin
-        file: skins/dark-blue.hjson
+        //file: skins/dark-blue.hjson
         //file: skins/catppuccin-macchiato.hjson
-        //file: skins/catppuccin-mocha.hjson
+        file: skins/catppuccin-mocha.hjson
         //file: skins/dark-gruvbox.hjson
         //file: skins/dark-orange.hjson
         //file: skins/solarized-dark.hjson
