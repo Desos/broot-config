@@ -29,8 +29,8 @@ verbs: [
         shortcut: e
         key: enter
         apply_to: text_file
-        execution: "$EDITOR {file}"
-        working_dir: "{root}"
+        external: "$EDITOR {file}"
+        working_dir: "{git-root}"
         leave_broot: false
     }
 
@@ -59,7 +59,7 @@ verbs: [
     #Navigation
     {
         keys: [
-            escape
+            esc
             alt-left
         ]
         internal: ":back"

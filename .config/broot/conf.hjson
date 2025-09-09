@@ -163,7 +163,7 @@ quit_on_last_cancel: true
 #  https://dystroy.org/broot/input/#the-filtering-pattern
 #
 search_modes: {
-    <empty>: fuzzy name
+    <empty>: fuzzy path
     /: regex name
 }
 
