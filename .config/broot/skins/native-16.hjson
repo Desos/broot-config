@@ -10,15 +10,15 @@
 ###############################################################
 
 skin: {
-    directory: ansi(12)
+    directory: ansi(5)
     file: ansi(7)
     pruning: ansi(8) none italic
     selected_line: none ansi(0)
-    tree: ansi(8)
+    tree: ansi(13)
 
     # Search
     char_match: ansi(3) none underlined
-    parent: ansi(4) none bold
+    parent: ansi(5) none bold
 
     # File properties
     exe: ansi(2)
@@ -26,7 +26,7 @@ skin: {
     sparse: ansi(12)
 
     # Prompt
-    input: ansi(6)
+    input: ansi(7)
 
     # Status bar
     status_bold: ansi(7) ansi(8) bold
@@ -38,8 +38,8 @@ skin: {
     status_normal: ansi(7) ansi(8)
 
     # Flag status
-    flag_label: ansi(6)
-    flag_value: ansi(14) none bold
+    flag_label: ansi(9)
+    flag_value: ansi(9) none bold
 
     # Background
     default: none none
@@ -49,7 +49,7 @@ skin: {
     scrollbar_thumb: ansi(3)
 
     # Git
-    git_branch: ansi(13)
+    git_branch: ansi(10)
     git_deletions: ansi(1)
     git_insertions: ansi(2)
     git_status_conflicted: ansi(1)
@@ -107,7 +107,7 @@ skin: {
 
     # Content searches
     content_extract: ansi(7)
-    content_match: ansi(3) none underlined
+    content_match: ansi(14) none underlined
 
     # Used in status line
     purpose_bold: ansi(0) ansi(7) bold
