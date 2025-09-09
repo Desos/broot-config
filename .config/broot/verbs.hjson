@@ -51,7 +51,24 @@ verbs: [
     {
         invocation: show_diff
         shortcut: sd
-        execution: "git difftool -y {file}"
+        external: "git difftool -y {file}"
+        working_dir: "{git-root}"
+        leave_broot: false
+    }
+    {
+        invocation: show_diff_panel
+        shortcut: sdp
+        external: "git difftool -y {file} {other-panel-file}"
+        from_shell: false
+        working_dir: "{git-root}"
+        leave_broot: false
+        apply_to: file
+    }
+    {
+        invocation: lazygit
+        shortcut: lg
+        external: "lazygit"
+        from_shell: false
         working_dir: "{git-root}"
         leave_broot: false
     }
@@ -59,7 +76,6 @@ verbs: [
     #Navigation
     {
         keys: [
-            esc
             alt-left
         ]
         internal: ":back"
